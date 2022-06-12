@@ -33,7 +33,7 @@ export default {
       pagination: {
         page: 1,
         total: 0,
-        perPage: 12,
+        perPage: 10,
         visible: 7
       },
       country: {},
@@ -50,12 +50,12 @@ export default {
         const response = await this.$axios.$get(`/alpha/${this.name}`)
 
         this.country = response[0]
-        console.log(this.country)
+
         if (this.country.borders) {
           const items = this.country.borders
           for (let i = 0; i < items.length; i++) {
             let response = await this.$axios.$get(`/alpha/${items[i]}`)
-            this.borders.push(response);
+            this.borders.push(response[0]);
           }
         }
 
