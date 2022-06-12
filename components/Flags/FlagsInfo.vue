@@ -5,11 +5,11 @@
         lazy-src="https://picsum.photos/id/11/10/6"
         max-height="258"
         max-width="443"
-        :src="card.flags.svg"
+        :src="card.flags.png"
       ></v-img>
       <div class="info" style="background-color: transparent !important;">
-        <span>Nome: {{ card.name }}</span>
-        <span>Capital: {{ card.capital }}</span>
+        <span>Nome: {{ card.name.official }}</span>
+        <span>Capital: {{ card.capital[0] }}</span>
         <span
           >Região:
           <span
@@ -26,7 +26,7 @@
             class="mr-1"
             v-for="(item, index) in card.languages"
             :key="index"
-            >{{ item.nativeName }};</span
+            >{{ item }};</span
           ></span
         >
       </div>
@@ -37,11 +37,11 @@
         max-height="198"
         width="100%"
         max-width="296"
-        :src="card.flags.svg"
+        :src="card.flags.png"
       ></v-img>
       <div class="info" style="background-color: transparent !important;">
-        <span>Nome: {{ card.name }}</span>
-        <span>Capital: {{ card.capital }}</span>
+        <span>Nome: {{ card.name.official }}</span>
+        <span>Capital: {{ card.capital[0] }}</span>
         <span
           >Região:
           <span
@@ -58,7 +58,7 @@
             class="mr-1"
             v-for="(item, index) in card.languages"
             :key="index"
-            >{{ item.name }};</span
+            >{{ item }};</span
           ></span
         >
       </div>

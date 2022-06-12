@@ -5,7 +5,7 @@
     <div class="container-cards">
       <FlagsCards
         v-for="item in paginatedItems"
-        :key="item.name.common"
+        :key="item.name"
         :card="item"
       />
     </div>
