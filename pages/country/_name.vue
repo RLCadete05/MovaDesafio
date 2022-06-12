@@ -1,11 +1,11 @@
 <template>
   <div class="mt-2">
-    <FlagsInfo class="mb-10" :card="country" :imgFlag="imgFlag"/>
+    <FlagsInfo class="mb-10" :card="country"/>
     <span style="font-size: 18px;">Países Vizinhos</span>
     <div class="container-cards">
       <FlagsCards
         v-for="item in paginatedItems"
-        :key="item.name.common"
+        :key="item.name"
         :card="item"
       />
     </div>
@@ -37,7 +37,6 @@ export default {
         visible: 7
       },
       country: {},
-      imgFlag: null,
       borders: []
     }
   },
@@ -51,7 +50,6 @@ export default {
         const response = await this.$axios.$get(`/alpha/${this.name}`)
 
         this.country = response[0]
-        this.imgFlag = this.country.flags.img
         console.log(this.country)
         if (response.borders) {
           const items = response.borders

@@ -5,10 +5,10 @@
         lazy-src="https://picsum.photos/id/11/10/6"
         max-height="258"
         max-width="443"
-        :src="imgFlag"
+        :src="card.flags.svg"
       ></v-img>
       <div class="info" style="background-color: transparent !important;">
-        <span>Nome: {{ card.name.common }}</span>
+        <span>Nome: {{ card.name }}</span>
         <span>Capital: {{ card.capital }}</span>
         <span
           >Região:
@@ -37,10 +37,10 @@
         max-height="198"
         width="100%"
         max-width="296"
-        :src="imgFlag"
+        :src="card.flags.svg"
       ></v-img>
       <div class="info" style="background-color: transparent !important;">
-        <span>Nome: {{ card.name.common }}</span>
+        <span>Nome: {{ card.name }}</span>
         <span>Capital: {{ card.capital }}</span>
         <span
           >Região:
@@ -70,8 +70,7 @@
 export default {
   name: 'FlagsInfo',
   props: {
-    card: Object,
-    imgFlag: String
+    card: Object
   },
 
   methods: {

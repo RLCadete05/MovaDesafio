@@ -49,7 +49,7 @@ export default {
             options: [
                 { value: "region", text: "Região" },
                 { value: "capital", text: "Capital" },
-                { value: "languages", text: "Lingua" },
+                { value: "lang", text: "Lingua" },
                 { value: "name", text: "País" },
             ],
       }
@@ -71,7 +71,7 @@ export default {
             }
         },
         searchCountriesAndLanguages(item){
-            if(this.selected == 'languages'){
+            if(this.selected == 'lang'){
                 if(item.languages === undefined) return
                 const languesArray = Object.keys(item.languages)
                 return item.languages[languesArray[0]]

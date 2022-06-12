@@ -23,7 +23,7 @@ export default {
     },
     methods: {
         toCountry(){
-            this.$router.push({ path: `/country/${this.card.name.common}` })
+            this.$router.push({ path: `/country/${this.card.altSpellings[0]}` })
         }
     }
 }
