@@ -5,7 +5,7 @@
     <div class="container-cards">
       <FlagsCards
         v-for="item in paginatedItems"
-        :key="item.name"
+        :key="item.name.common"
         :card="item"
       />
     </div>
@@ -51,8 +51,8 @@ export default {
 
         this.country = response[0]
         console.log(this.country)
-        if (response.borders) {
-          const items = response.borders
+        if (this.country.borders) {
+          const items = this.country.borders
           for (let i = 0; i < items.length; i++) {
             let response = await this.$axios.$get(`/alpha/${items[i]}`)
             this.borders.push(response);
