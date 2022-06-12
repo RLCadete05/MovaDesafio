@@ -42,7 +42,7 @@ export default {
     name: 'FilterGroup',
     data () {
         return {
-            selected: null,
+            selected: "name",
             selectedName: null,
             cards: [],
 
