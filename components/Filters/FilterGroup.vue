@@ -1,7 +1,7 @@
 <template>
-    <v-app class="d-flex align-center mt-15" style="max-width: 80%;">
-        <div style="width: 316px; color: #6D2080;">
-            <label for="filter" class="ml-3">Fitrar por:</label>  
+    <div id="filterForm" class="d-flex flex-row align-center">
+        <div style="width: 316px;" class="mr-9">
+            <label for="filter">Fitrar por:</label>  
             <v-autocomplete
                 id="filter"
                 v-model="selected"
@@ -12,9 +12,9 @@
                 style="margin: 0; padding: 0;"
             ></v-autocomplete>            
         </div>
-        <v-spacer />
-        <div v-if="selected" style="width: 316px; color: #6D2080;">
-            <label for="filterPerItem" class="ml-3">Itens</label>
+       
+        <div v-if="selected" style="width: 316px;" class="mr-9">
+            <label for="filterPerItem">Itens</label>
             <v-autocomplete
                 id="filterPerItem"
                 v-model="selectedName"
@@ -32,7 +32,7 @@
             style="color: #fff; font-weight: 400; border-radius: 10px;"
         >Pesquisar</v-btn>
 
-    </v-app>
+    </div>
 
 </template>
 
@@ -102,11 +102,19 @@ export default {
 </script>
 
 <style>
+
     #filter,
     #filterPerItem {
-    font-size: 18px;
-    padding-left: 25px;
-    color: #8d8d8d;
+        font-size: 18px;
+        padding-left: 25px;
+        color: #8d8d8d;
+    }
+    @media screen and (min-width: 320px) and (max-width: 600px) {
+        #filterForm {
+            display: flex;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
     }
 </style>
 

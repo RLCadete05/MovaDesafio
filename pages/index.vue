@@ -1,6 +1,6 @@
 <template>
   <div>
-    <FilterGroup class="filter " @getCountry="getData" />
+    <FilterGroup class="filter" @getCountry="getData" />
     <div class="container-cards">
       <FlagsCard
         v-for="card in paginatedItems"
@@ -34,7 +34,7 @@ export default {
       pagination: {
         page: 1,
         total: 0,
-        perPage: 12,
+        perPage: 10,
         visible: 7
       }
     }
@@ -128,9 +128,5 @@ async mounted () {
     margin-bottom: 20px;
   }
 
-  @media screen and (min-width: 320px) and (max-width: 600px) {
-    .filter {
-      display: none !important;
-    }
-  }
+
 </style>
