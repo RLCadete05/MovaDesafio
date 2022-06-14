@@ -1,6 +1,6 @@
 <template>
   <div class="mt-2">
-    <FlagsInfo class="mb-10" :card="country"/>
+    <FlagsInfo v-if="country" class="mb-10" :card="country"/>
     <span style="font-size: 18px;">Países Vizinhos</span>
     <div class="container-cards">
       <FlagsCards
@@ -36,7 +36,7 @@ export default {
         perPage: 12,
         visible: 7
       },
-      country: {},
+      country: null,
       borders: []
     }
   },
